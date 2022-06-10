@@ -1,23 +1,25 @@
-var repoList = document.querySelector('ul');
-var fetchButton = document.getElementById('fetch-button');
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'fe7bdd69f0msh9594c83e6b599c0p1521a2jsn075065d4fdd0',
+		'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+	}
+};
 
-function getApi() {
-  // Replace `octocat` with anyone else's GitHub username
-  var requestUrl = 'www.thecocktaildb.com/api/json/v1/1/random.php';
+fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&output_language=en&language=en', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
-  fetch(requestUrl)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      for (var i = 0; i < data.length; i++) {
-        // var listItem = document.createElement('li');
-        // listItem.textContent = data[i].html_url;
-        // repoList.appendChild(listItem);
-      }
-    });
-}
-
-console.log(getApi);
-// fetchButton.addEventListener('click', getApi);
-getApi();
+const options2 = {
+    method: 'GET',
+    headers: {
+        'API-Key': '1',
+        'API-Host': 'http://api.marketstack.com/v1/'
+    }
+    };
+    
+fetch('www.thecocktaildb.com/api/json/v1/1/random.php', options2)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
