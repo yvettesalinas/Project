@@ -11,15 +11,15 @@ fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-const options2 = {
-    method: 'GET',
-    headers: {
-        'API-Key': '1',
-        'API-Host': 'http://api.marketstack.com/v1/'
-    }
+    const optionsB = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a8e483976dmshec4d2742c1d95c9p1e2f36jsn301a53d09a19',
+            'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+        }
     };
     
-fetch('www.thecocktaildb.com/api/json/v1/1/random.php', options2)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+    fetch('https://the-cocktail-db.p.rapidapi.com/random.php', optionsB)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
