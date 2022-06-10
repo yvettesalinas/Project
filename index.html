@@ -13,15 +13,40 @@
         <a href="">Your Dates</a>
     </header>
     <!--DATE SELECTION-->
-    <main class="hero">
+    <main>
+        <section class="hero">
         <div class="hero-quote">
             <h2>Your Perfect Night a Click Away</h2>
         </div>
-        <div class="hero-button">
-            <form>
-                <button type="submit" class="btn">Recieve a Date</button>
-            </form>
+        <div class="hero-btn">
+            <button type="submit" class="btn">Recieve Date</button>
         </div>
+        <br>
+        <div class="Save-btn">
+            <input type="button" value="Save Date" onclick="saveDates()">
+        </div>
+        </section>
+    <!--CARD SECTIONS-->
+        <section id="Card">
+    <!--MOVIE CONTAINER-->
+            <div class="movie-container">
+                <h2 class="subtitle-movie">MOVIE</h2>
+                <div id="movie-container" class="list-group"></div>
+            </div>
+    <!--DINNER CONTAINER-->
+            <div class="dinner-container">
+                <h2 class="subtitle-dinner">DINNER</h2>
+                <div id="dinner-container" class="list-group"></div>
+            </div>
+    <!--COCKTAIL CONTAINER-->
+            <div class="cocktail-container">
+                <h2 class="subtitle-cocktai">COCKTAIL</h2>
+                <div id="cocktail-container" class="list-group"></div>
+            </div>   
+        
+    <!--JAVASCRIPT-->
+        <script src=""></script>
+        </section>
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
