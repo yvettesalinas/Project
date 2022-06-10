@@ -13,4 +13,7 @@
         border-bottom: 4px solid black;
       }
 
-      {}
+      .columns.is-mobile > .column.is-one-third {
+        flex: none;
+        width: 33.3333%;
+      }
