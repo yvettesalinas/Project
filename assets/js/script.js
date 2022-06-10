@@ -23,3 +23,11 @@ fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
+
+//mobile menu
+const burgerIcon = document.querySelector('#burger');
+const navbarMenu = document.querySelector('#nav-links');
+
+burgerIcon.addEventListener('click',() => {
+    navbarMenu.classList.toggle('is-active');
+});
