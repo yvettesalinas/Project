@@ -4,7 +4,7 @@
   
    }
 
-    .page-title {
+.page-title {
         padding: 0 80px 15px 80px;
         font-size: 42px;
         font-weight: 400;
@@ -14,7 +14,7 @@
         border-bottom: 4px solid black;
       }
 
-      .columns.is-mobile > .column.is-one-third {
+.columns.is-mobile > .column.is-one-third {
         flex: none;
         width: 33.3333%;
       }
