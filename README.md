@@ -21,7 +21,8 @@ For this project, we were asked to complete an application that utilized the ski
 
 ## 💻 Technologies Used
 
-* 
+* Bulma
+
 
 ## 👀 Project Visuals
 The following image demonstrate the application's appearance: 
