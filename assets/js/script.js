@@ -7,15 +7,71 @@ function movieApi() {
             'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
         }
     };
+    
+    // adds preferred streaming service to 
+    let service = $('#service-select').val();
+    let movieUrl = `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${service}&type=movie&genre=18&page=1&output_language=en&language=en`;
+    
+    fetch(movieUrl, options)
+        .then(function (response) {
+            return response.json();
+        })
+        
+        .then(function (data) {
+            console.log(data);
+            function showMovie(data) {
+                // creating elements for cocktail card
+                let movieNameEl = document.createElement('h3');
+                let movieImgEl = document.createElement('img');
+                let movieDescContainer = document.createElement('div');
+                let movieDescTitle = document.createElement('h3');
+                let movieDescEl = document.createElement('p');
+                let movieCastContainer = document.createElement('div');
+                let movieCastTitle = document.createElement('h3');
+                let movieCastMembers = document.createElement('ul');
+                let movieCard = $('#movie-container');
+            
+                // // setting text for cocktail elements
+                movieNameEl.textContent = data.results[0].title;
+                movieImgEl.src = data.results[0].posterURLs['original'];
+                movieDescEl.textContent = data.results[0].overview;
+                movieDescTitle.textContent = 'Description:'
+                movieCastTitle.textContent = 'Cast Members:'
+                
 
-    fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&output_language=en&language=en', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+                // setting class for cocktail elements
+                // movieNameEl.classList.add('');
+                // movieImgEl.classList.add('');
+                // movieDescContainer.classList.add('');
+                // movieDescTitle.classList.add('');
+                // movieDescEl.classList.add('');
+                // movieCastContainer.classList.add('');
+                // movieCastTitle.classList.add('');
+                // movieCastMembers.classList.add('');
+                
+                
+                // appending elements to html container
+                movieCard.append(movieNameEl);
+                movieCard.append(movieImgEl);
+                movieCard.append(movieDescContainer);
+                movieCard.append(movieCastContainer);
+                movieDescContainer.append(movieDescTitle);
+                movieCastContainer.append(movieCastTitle);
+                movieDescContainer.append(movieDescEl);
+                movieCastContainer.append(movieCastMembers);
+
+                for (let i = 0; i < data.results[0].cast.length; i++) {
+                    let movieCast = document.createElement('li');
+                    movieCast.textContent = data.results[0].cast[i];
+                    movieCastMembers.append(movieCast);
+                }
+            };
+            showMovie(data);
+        });       
 
         
 
-}
+};
 
 // Fetches cocktail api
 function cocktailApi() {
@@ -59,9 +115,8 @@ function cocktailApi() {
                 drinkCard.append(drinkIngredientsEl);
                 drinkCard.append(drinkInstructionEl);
 
-                // for loop to list out ingredients
+                // for loop to list out ingredients and measurements
                 for(let i = 1; i < 16; i++) {
-                    console.log(i)
                     
                     if(data.drinks[0][`strIngredient${i}`]) {
                         let ingredientEl = document.createElement('li');
@@ -90,5 +145,8 @@ burgerIcon.addEventListener('click',() => {
     navbarMenu.classList.toggle('is-active');
 });
 
+$('#getDate').click(function() {
+    movieApi();
+    cocktailApi();
+});
 
-cocktailApi();

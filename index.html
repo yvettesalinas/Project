@@ -84,7 +84,24 @@
             <h2 class="is-size-4 has-text-centered">Your Perfect Night is a Click Away</h2>
         </div>
         <div class="hero-btn has-text-centered">
-            <button type="submit" class="button is-rounded is-large is-primary">Receive Date</button>
+            <label for="service-select">Choose your preferred Streaming Service:</label>
+
+            <select id="service-select" name="streamingServices">
+                <option value="">--Please choose an option--</option>
+                <option value="netflix">Neflix</option>
+                <option value="prime">Amazon Prime</option>
+                <option value="disney">Disney</option>
+                <option value="hbo">HBO</option>
+                <option value="hulu">Hulu</option>
+                <option value="peacock">Peacock</option>
+                <option value="paramount">Paramount</option>
+                <option value="starz">Starz</option>
+                <option value="showtime">Showtime</option>
+                <option value="apple">Apple Tv</option>
+                <option value="mubi">Mubi</option>
+            </select>
+
+            <button type="submit" id="getDate" class="button is-rounded is-large is-primary">Receive Date</button>
         </div>
         <br>
         <div class="Save-btn has-text-centered">
