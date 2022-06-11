@@ -1,16 +1,26 @@
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'fe7bdd69f0msh9594c83e6b599c0p1521a2jsn075065d4fdd0',
-		'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
-	}
-};
+let cocktailListup = [];
 
-fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&output_language=en&language=en', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+// Fetches movie API, dont have as many daily fetches for this one so we won't call it until we need to
+function movieApi() {
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'fe7bdd69f0msh9594c83e6b599c0p1521a2jsn075065d4fdd0',
+            'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+        }
+    };
 
+    fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&output_language=en&language=en', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+
+        
+
+}
+
+// Fetches cocktail api
+function cocktailApi() {
     const optionsB = {
         method: 'GET',
         headers: {
@@ -20,9 +30,52 @@ fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
     };
     
     fetch('https://the-cocktail-db.p.rapidapi.com/random.php', optionsB)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        .then(function (response) {
+            return response.json();
+        })
+        
+        .then(function (data) {
+            console.log(data);
+            function showDrink(data) {
+                // creating elements for cocktail card
+                let drinkNameEl = document.createElement('h3');
+                let drinkIngredientsEl = document.createElement('ol');
+                // let ingredientEl = document.createElement('li');
+                let drinkInstructionEl = document.createElement('p');
+                let drinkCard = $('#cocktail-container');
+            
+                // // setting text for cocktail elements
+                drinkNameEl.textContent = data.drinks[0].strDrink;
+                drinkInstructionEl.textContent = data.drinks[0].strInstructions;
+
+                // setting class for cocktail elements
+
+                // appending elements to html container
+            
+                drinkCard.append(drinkNameEl);
+                drinkCard.append(drinkIngredientsEl);
+                drinkCard.append(drinkInstructionEl);
+
+                // for loop to list out ingredients
+                for(i = 1; i < 15; i++) {
+                    debugger;
+                    let ingredientNumber = 'strIngredient0' + [i];
+                 
+                    let ingredientEl = document.createElement('li');
+                        
+                    ingredientEl.textContent = data.drinks[0].ingredientNumber;
+
+                    drinkIngredientsEl.append(ingredientEl)
+                    
+                };
+            };
+            showDrink(data);
+        })
+    
+         
+};
+
+
 
 //mobile menu
 const burgerIcon = document.querySelector('#burger');
@@ -31,3 +84,6 @@ const navbarMenu = document.querySelector('#nav-links');
 burgerIcon.addEventListener('click',() => {
     navbarMenu.classList.toggle('is-active');
 });
+
+
+cocktailApi();
