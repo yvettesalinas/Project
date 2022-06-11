@@ -1,5 +1,3 @@
-let cocktailListup = [];
-
 // Fetches movie API, dont have as many daily fetches for this one so we won't call it until we need to
 function movieApi() {
     const options = {
@@ -39,33 +37,40 @@ function cocktailApi() {
             function showDrink(data) {
                 // creating elements for cocktail card
                 let drinkNameEl = document.createElement('h3');
+                let drinkImgEl = document.createElement('img')
                 let drinkIngredientsEl = document.createElement('ol');
-                // let ingredientEl = document.createElement('li');
                 let drinkInstructionEl = document.createElement('p');
                 let drinkCard = $('#cocktail-container');
             
                 // // setting text for cocktail elements
                 drinkNameEl.textContent = data.drinks[0].strDrink;
+                drinkImgEl.src = data.drinks[0].strDrinkThumb;
                 drinkInstructionEl.textContent = data.drinks[0].strInstructions;
 
                 // setting class for cocktail elements
+                // drinkNameEl.classList.add('');
+                // drinkImgEl.classList.add('');
+                // drinkInstructionEl.classList.add('');
+                // ingredientEl.classList.add('');
 
                 // appending elements to html container
-            
                 drinkCard.append(drinkNameEl);
+                drinkCard.append(drinkImgEl);
                 drinkCard.append(drinkIngredientsEl);
                 drinkCard.append(drinkInstructionEl);
 
                 // for loop to list out ingredients
-                for(i = 1; i < 15; i++) {
-                    debugger;
-                    let ingredientNumber = 'strIngredient0' + [i];
-                 
-                    let ingredientEl = document.createElement('li');
-                        
-                    ingredientEl.textContent = data.drinks[0].ingredientNumber;
+                for(let i = 1; i < 16; i++) {
+                    console.log(i)
+                    
+                    if(data.drinks[0][`strIngredient${i}`]) {
+                        let ingredientEl = document.createElement('li');
+                            
+                        ingredientEl.innerHTML = data.drinks[0][`strIngredient${i}`] + ' : ' + data.drinks[0][`strMeasure${i}`];
 
-                    drinkIngredientsEl.append(ingredientEl)
+                        
+                        drinkIngredientsEl.append(ingredientEl)
+                    };
                     
                 };
             };
