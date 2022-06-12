@@ -7,6 +7,7 @@
     <title>Date Destresser</title>
     <link rel="icon" href="./assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -61,10 +62,15 @@
 
     <!--TITLE-->
     <header>
-        <section class="hero is-halfheight">
-            <figure class="hero-background is-transparent is-halfheight">
+        <section class="hero">
+            <figure class="hero-background">
              <img src="./assets/images/hero6.jpg" alt="Date Night Streaming" />
+             <div class="hero-quote">
+                <h2 class="is-size-4 has-text-centered centered">Your Perfect Night is a Click Away</h2>
+            </div>
             </figure>
+            </section>
+            <section>
              <div class= "hero-body">
                 <div class="container">
                     <h1 class="title has-text-centered">
@@ -82,15 +88,13 @@
     <!--DATE SELECTION-->
     <main>
         <section class="hero">
-        <div class="hero-quote">
-            <h2 class="is-size-4 has-text-centered">Your Perfect Night is a Click Away</h2>
-        </div>
+        
         <div class="hero-btn has-text-centered">
             <label for="service-select">Choose your preferred Streaming Service:</label>
 
             <select id="service-select" name="streamingServices">
                 <option value="">--Please choose an option--</option>
-                <option value="netflix">Neflix</option>
+                <option value="netflix">Netflix</option>
                 <option value="prime">Amazon Prime</option>
                 <option value="disney">Disney</option>
                 <option value="hbo">HBO</option>
