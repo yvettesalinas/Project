@@ -1,4 +1,4 @@
-/* .hero {
+.hero {
     height: auto;
     text-align: center;
   
@@ -17,9 +17,9 @@
 .columns.is-mobile > .column.is-one-third {
         flex: none;
         width: 33.3333%;
-      } */
+      }
 
-      .centered {
+.centered {
         position: absolute;
         top: 50%;
         left: 50%;

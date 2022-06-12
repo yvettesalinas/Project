@@ -64,12 +64,45 @@
     <header>
         <section class="hero">
             <figure class="hero-background">
-             <img src="./assets/images/hero6.jpg" alt="Date Night Streaming" />
-             <div class="hero-quote">
-                <h2 class="is-size-4 has-text-centered centered">Your Perfect Night is a Click Away</h2>
-            </div>
+                <img src="./assets/images/hero6.jpg" alt="Date Night Streaming" />
+                <div class="centered">
+                    
+                    <!--TAGLINE-->
+                    <div class="hero-quote">
+                        <h2 class="is-size-4 has-text-centered ">Your Perfect Night is a Click Away</h2>
+                    </div>
+
+                    <!--DATE SELECTION-->
+                    <section class="hero my-4">
+                        <div class="hero-btn has-text-centered">
+                            <label for="service-select">Choose your preferred Streaming Service:</label>
+                            <select id="service-select" name="streamingServices">
+                                <option value="">--Please choose an option--</option>
+                                <option value="netflix">Netflix</option>
+                                <option value="prime">Amazon Prime</option>
+                                <option value="disney">Disney</option>
+                                <option value="hbo">HBO</option>
+                                <option value="hulu">Hulu</option>
+                                <option value="peacock">Peacock</option>
+                                <option value="paramount">Paramount</option>
+                                <option value="starz">Starz</option>
+                                <option value="showtime">Showtime</option>
+                                <option value="apple">Apple Tv</option>
+                                <option value="mubi">Mubi</option>
+                            </select>
+                            <button type="submit" id="getDate" class="button is-rounded is-small is-primary">Receive Date</button>
+                        </div>
+                        <br>
+
+                        <!--SAVE DATE BUTTON-->
+                        <div class="Save-btn has-text-centered">
+                            <input type="button" value="Save Date" onclick="saveDates()">
+                        </div>
+                    </section>
+                </div>
             </figure>
-            </section>
+        </section>
+
             <section>
              <div class= "hero-body">
                 <div class="container">
@@ -83,38 +116,10 @@
             </div>
         </section>
     </header>
-
 </body>
-    <!--DATE SELECTION-->
-    <main>
-        <section class="hero">
-        
-        <div class="hero-btn has-text-centered">
-            <label for="service-select">Choose your preferred Streaming Service:</label>
-
-            <select id="service-select" name="streamingServices">
-                <option value="">--Please choose an option--</option>
-                <option value="netflix">Netflix</option>
-                <option value="prime">Amazon Prime</option>
-                <option value="disney">Disney</option>
-                <option value="hbo">HBO</option>
-                <option value="hulu">Hulu</option>
-                <option value="peacock">Peacock</option>
-                <option value="paramount">Paramount</option>
-                <option value="starz">Starz</option>
-                <option value="showtime">Showtime</option>
-                <option value="apple">Apple Tv</option>
-                <option value="mubi">Mubi</option>
-            </select>
-
-            <button type="submit" id="getDate" class="button is-rounded is-small is-primary">Receive Date</button>
-        </div>
-        <br>
-        <div class="Save-btn has-text-centered">
-            <input type="button" value="Save Date" onclick="saveDates()">
-        </div>
-        </section>
+          
     <!--CARD SECTIONS-->
+    <main>
             <section id="Card">
                 <div class="container">
                     <div class="columns">
