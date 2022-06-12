@@ -30,40 +30,47 @@ function movieApi() {
                 let movieCastTitle = document.createElement('h3');
                 let movieCastMembers = document.createElement('ul');
                 let movieCard = $('#movie-container');
+
+                for (let i = 0; i < 1; i++) {
+                    const arrayMovie = Math.floor(Math.random() * data.results.length);
+                    
+                    console.log(arrayMovie);
+                
             
-                // // setting text for cocktail elements
-                movieNameEl.textContent = data.results[0].title;
-                movieImgEl.src = data.results[0].posterURLs['original'];
-                movieDescEl.textContent = data.results[0].overview;
-                movieDescTitle.textContent = 'Description:'
-                movieCastTitle.textContent = 'Cast Members:'
-                
+                    // // setting text for cocktail elements
+                    movieNameEl.textContent = data.results[arrayMovie].title;
+                    movieImgEl.src = data.results[arrayMovie].posterURLs['original'];
+                    movieDescEl.textContent = data.results[arrayMovie].overview;
+                    movieDescTitle.textContent = 'Description:'
+                    movieCastTitle.textContent = 'Cast Members:'
+                    
 
-                // setting class for cocktail elements
-                // movieNameEl.classList.add('');
-                // movieImgEl.classList.add('');
-                // movieDescContainer.classList.add('');
-                // movieDescTitle.classList.add('');
-                // movieDescEl.classList.add('');
-                // movieCastContainer.classList.add('');
-                // movieCastTitle.classList.add('');
-                // movieCastMembers.classList.add('');
-                
-                
-                // appending elements to html container
-                movieCard.append(movieNameEl);
-                movieCard.append(movieImgEl);
-                movieCard.append(movieDescContainer);
-                movieCard.append(movieCastContainer);
-                movieDescContainer.append(movieDescTitle);
-                movieCastContainer.append(movieCastTitle);
-                movieDescContainer.append(movieDescEl);
-                movieCastContainer.append(movieCastMembers);
+                    // setting class for movie elements
+                    // movieNameEl.classList.add('');
+                    // movieImgEl.classList.add('');
+                    // movieDescContainer.classList.add('');
+                    // movieDescTitle.classList.add('');
+                    // movieDescEl.classList.add('');
+                    // movieCastContainer.classList.add('');
+                    // movieCastTitle.classList.add('');
+                    // movieCastMembers.classList.add('');
+                    
 
-                for (let i = 0; i < data.results[0].cast.length; i++) {
-                    let movieCast = document.createElement('li');
-                    movieCast.textContent = data.results[0].cast[i];
-                    movieCastMembers.append(movieCast);
+                    // appending elements to html container
+                    movieCard.append(movieNameEl);
+                    movieCard.append(movieImgEl);
+                    movieCard.append(movieDescContainer);
+                    movieCard.append(movieCastContainer);
+                    movieDescContainer.append(movieDescTitle);
+                    movieCastContainer.append(movieCastTitle);
+                    movieDescContainer.append(movieDescEl);
+                    movieCastContainer.append(movieCastMembers);
+
+                    for (let i = 0; i < data.results[arrayMovie].cast.length; i++) {
+                        let movieCast = document.createElement('li');
+                        movieCast.textContent = data.results[arrayMovie].cast[i];
+                        movieCastMembers.append(movieCast);
+                    }
                 }
             };
             showMovie(data);
@@ -94,7 +101,7 @@ function cocktailApi() {
                 // creating elements for cocktail card
                 let drinkNameEl = document.createElement('h3');
                 let drinkImgEl = document.createElement('img')
-                let drinkIngredientsEl = document.createElement('ol');
+                let drinkIngredientsEl = document.createElement('ul');
                 let drinkInstructionEl = document.createElement('p');
                 let drinkCard = $('#cocktail-container');
             
@@ -108,6 +115,7 @@ function cocktailApi() {
                 // drinkImgEl.classList.add('');
                 // drinkInstructionEl.classList.add('');
                 // ingredientEl.classList.add('');
+                // drinkCard.classList.a
 
                 // appending elements to html container
                 drinkCard.append(drinkNameEl);
