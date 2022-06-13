@@ -7,6 +7,8 @@ var yourDates = [];
 
 // Fetches movie API, dont have as many daily fetches for this one so we won't call it until we need to
 function movieApi() {
+    
+    
     const options = {
         method: 'GET',
         headers: {
@@ -17,7 +19,8 @@ function movieApi() {
     
     // adds preferred streaming service to 
     let service = $('#service-select').val();
-    let movieUrl = `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${service}&type=movie&genre=18&page=1&output_language=en&language=en`;
+    let genre = $('#genre-select').val();
+    let movieUrl = `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${service}&type=movie&genre=${genre}&page=1&output_language=en&language=en`;
     
     fetch(movieUrl, options)
         .then(function (response) {
@@ -36,7 +39,7 @@ function movieApi() {
                 let movieCastContainer = document.createElement('div');
                 let movieCastTitle = document.createElement('h3');
                 let movieCastMembers = document.createElement('ul');
-                let movieCard = $('#movie-container');
+                const movieCard = $('#movie-container');
 
                 for (let i = 0; i < 1; i++) {
                     const arrayMovie = Math.floor(Math.random() * data.results.length);
@@ -64,6 +67,7 @@ function movieApi() {
                     
 
                     // appending elements to html container
+                    // movieCard.innerHTML("");
                     movieCard.append(movieNameEl);
                     movieCard.append(movieImgEl);
                     movieCard.append(movieDescContainer);
@@ -89,6 +93,8 @@ function movieApi() {
 
 // Fetches cocktail api
 function cocktailApi() {
+    
+
     const optionsB = {
         method: 'GET',
         headers: {
@@ -125,6 +131,7 @@ function cocktailApi() {
                 // drinkCard.classList.a
 
                 // appending elements to html container
+                // cocktailCard.innerHTML("");
                 drinkCard.append(drinkNameEl);
                 drinkCard.append(drinkImgEl);
                 drinkCard.append(drinkIngredientsEl);
@@ -167,9 +174,9 @@ $('#getDate').click(function() {
 
 
 $('#savedDate').click(function() {
-    var getDate = $("#getDate").val();
+    var getDate = $("#card");
     var list = [];
-    list.push("getDate");
+    list.push(getDate);
     localStorage.setItem("listdata", list);
     console.log(list);
 
