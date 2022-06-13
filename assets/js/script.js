@@ -1,3 +1,10 @@
+var containersavedDatesEl = document.getElementById("saved-dates-container")
+var ViewsavedDatesEl = document.getElementById("view-saved-dates")
+var listsavedDatesEl = document.getElementById("saved-dates-list")
+var savedDatesE1 = document.querySelector("#savedDates");
+
+var yourDates = [];
+
 // Fetches movie API, dont have as many daily fetches for this one so we won't call it until we need to
 function movieApi() {
     const options = {
@@ -158,3 +165,13 @@ $('#getDate').click(function() {
     cocktailApi();
 });
 
+
+$('#savedDate').click(function() {
+    var getDate = $("#getDate").val();
+    var list = [];
+    list.push("getDate");
+    localStorage.setItem("listdata", list);
+    console.log(list);
+
+
+  });
