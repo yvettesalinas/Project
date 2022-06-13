@@ -8,7 +8,6 @@ var yourDates = [];
 // Fetches movie API, dont have as many daily fetches for this one so we won't call it until we need to
 function movieApi() {
     
-    
     const options = {
         method: 'GET',
         headers: {
@@ -87,14 +86,11 @@ function movieApi() {
             showMovie(data);
         });       
 
-        
-
 };
 
 // Fetches cocktail api
 function cocktailApi() {
     
-
     const optionsB = {
         method: 'GET',
         headers: {
