@@ -45,3 +45,7 @@
 .hero-background.is-transparent {
       opacity: 0.3;
       }
+
+.navbar-item {
+      color:#4a4a4a !important;
+      }
