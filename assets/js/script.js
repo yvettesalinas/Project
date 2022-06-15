@@ -5,6 +5,7 @@ var savedDatesE1 = document.querySelector("#savedDates");
 
 var yourDates = [];
 
+let movieId = document.createElement('p');
 // Fetches movie API, dont have as many daily fetches for this one so we won't call it until we need to
 function movieApi() {
     
@@ -47,6 +48,7 @@ function movieApi() {
                 
             
                     // // setting text for cocktail elements
+                    movieId = data.results[arrayMovie].imdbID;
                     movieNameEl.textContent = data.results[arrayMovie].title;
                     movieImgEl.src = data.results[arrayMovie].posterURLs['original'];
                     movieDescEl.textContent = data.results[arrayMovie].overview;
@@ -89,6 +91,7 @@ function movieApi() {
 };
 
 // Fetches cocktail api
+let drinkId = document.createElement('p');
 function cocktailApi() {
     
     const optionsB = {
@@ -113,11 +116,13 @@ function cocktailApi() {
                 let drinkIngredientsEl = document.createElement('ul');
                 let drinkInstructionEl = document.createElement('p');
                 let drinkCard = $('#cocktail-container');
+                
             
                 // // setting text for cocktail elements
                 drinkNameEl.textContent = data.drinks[0].strDrink;
                 drinkImgEl.src = data.drinks[0].strDrinkThumb;
                 drinkInstructionEl.textContent = data.drinks[0].strInstructions;
+                drinkId = data.drinks[0].idDrink;
 
                 // setting class for cocktail elements
                 // drinkNameEl.classList.add('');
@@ -170,11 +175,15 @@ $('#getDate').click(function() {
 
 
 $('#savedDate').click(function() {
-    var getDate = $("#card");
-    var list = [];
-    list.push(getDate);
+    // let getDrink = drinkId;
+    // let getMovie = movieId
+
+    let list = [];
+    console.log(drinkId);
+    list.push(movieId, drinkId);
     localStorage.setItem("listdata", list);
     console.log(list);
-
+    const saveDateData = localStorage.getItem("listdata");
+    console.log(saveDateData);
 
   });
