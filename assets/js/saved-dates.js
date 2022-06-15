@@ -92,4 +92,12 @@ function loadPostDates() {
     
 };
 
+//mobile menu
+const burgerIcon = document.querySelector('#burger');
+const navbarMenu = document.querySelector('#navbarExampleTransparentExample');
+
+burgerIcon.addEventListener('click',() => {
+    navbarMenu.classList.toggle('is-active');
+});
+
 loadPostDates();
