@@ -57,14 +57,14 @@ function movieApi() {
                     
 
                     // setting class for movie elements
-                    // movieNameEl.classList.add('');
-                    // movieImgEl.classList.add('');
-                    // movieDescContainer.classList.add('');
-                    // movieDescTitle.classList.add('');
-                    // movieDescEl.classList.add('');
-                    // movieCastContainer.classList.add('');
-                    // movieCastTitle.classList.add('');
-                    // movieCastMembers.classList.add('');
+                    movieNameEl.classList.add('card-header-title')
+                    movieImgEl.classList.add('card-image');
+                    movieDescContainer.classList.add('card-content');
+                    movieDescTitle.classList.add('card-header');
+                    movieDescEl.classList.add('card-content');
+                    movieCastContainer.classList.add('card-footer-item');
+                    movieCastTitle.classList.add('card-content');
+                    movieCastMembers.classList.add('card-footer-item');
                     
 
                     // appending elements to html container
