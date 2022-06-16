@@ -84,10 +84,72 @@ function loadPostDates() {
     };
     savedMovieApi();
     
-    // const savedDatesContainer = $('#savedDatesContainer');
-    // const savedDateCard = document.createElement('div');
-    // savedDateCard.innerHTML = localStorage.getItem("listdata");
-    // savedDatesContainer.append(savedDateCard);
+    function savedCocktailApi() {
+    
+        const options2 = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'a8e483976dmshec4d2742c1d95c9p1e2f36jsn301a53d09a19',
+                'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+            }
+        };
+        
+        fetch('https://the-cocktail-db.p.rapidapi.com/random.php', options2)
+            .then(function (response) {
+                return response.json();
+            })
+            
+            .then(function (data) {
+                console.log(data);
+                function showSavedDrink(data) {
+                    // creating elements for cocktail card
+                    let savedDrinkNameEl = document.createElement('h3');
+                    let savedDrinkImgEl = document.createElement('img')
+                    let savedDrinkIngredientsEl = document.createElement('ul');
+                    let savedDrinkInstructionEl = document.createElement('p');
+                    let savedDrinkCard = $('#saved-cocktail-container');
+                    
+                
+                    // // setting text for cocktail elements
+                    savedDrinkNameEl.textContent = data.drinks[0].strDrink;
+                    savedDrinkImgEl.src = data.drinks[0].strDrinkThumb;
+                    savedDrinkInstructionEl.textContent = data.drinks[0].strInstructions;
+                    drinkId = data.drinks[0].idDrink;
+    
+                    // setting class for cocktail elements
+                    // savedDrinkNameEl.classList.add('');
+                    // savedDrinkImgEl.classList.add('');
+                    // savedDrinkInstructionEl.classList.add('');
+                    // savedIngredientsEl.classList.add('');
+                    // savedDrinkCard.classList.a
+    
+                    // appending elements to html container
+                    // cocktailCard.innerHTML("");
+                    savedDrinkCard.append(savedDrinkNameEl);
+                    savedDrinkCard.append(savedDrinkImgEl);
+                    savedDrinkCard.append(savedDrinkIngredientsEl);
+                    savedDrinkCard.append(savedDrinkInstructionEl);
+    
+                    // for loop to list out ingredients and measurements
+                    for(let i = 1; i < 16; i++) {
+                        
+                        if(data.drinks[0][`strIngredient${i}`]) {
+                            let savedIngredientsEl = document.createElement('li');
+                                
+                            savedIngredientsEl.innerHTML = data.drinks[0][`strIngredient${i}`] + ' : ' + data.drinks[0][`strMeasure${i}`];
+    
+                            
+                            savedDrinkIngredientsEl.append(savedIngredientsEl)
+                        };
+                        
+                    };
+                };
+                showSavedDrink(data);
+            })
+        
+             
+    };
+    savedCocktailApi();
     
     
 };
