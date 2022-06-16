@@ -57,14 +57,14 @@ function movieApi() {
                     
 
                     // setting class for movie elements
-                    movieNameEl.classList.add('card-header-title')
-                    movieImgEl.classList.add('card-image');
-                    movieDescContainer.classList.add('card-content');
-                    movieDescTitle.classList.add('card-header');
-                    movieDescEl.classList.add('card-content');
-                    movieCastContainer.classList.add('card-footer-item');
-                    movieCastTitle.classList.add('card-content');
-                    movieCastMembers.classList.add('card-footer-item');
+                    movieNameEl.className = 'card-header-title is-centered'
+                    movieImgEl.className = 'card-image';
+                    movieDescContainer.className = 'card-content';
+                    movieDescTitle.className = 'card-header';
+                    movieDescEl.className = 'card-content';
+                    movieCastContainer.className = 'card-footer';
+                    movieCastTitle.className = 'card-content';
+                    movieCastMembers.className = 'card-footer-item';
                     
 
                     // appending elements to html container
@@ -125,11 +125,11 @@ function cocktailApi() {
                 drinkId = data.drinks[0].idDrink;
 
                 // setting class for cocktail elements
-                // drinkNameEl.classList.add('');
-                // drinkImgEl.classList.add('');
-                // drinkInstructionEl.classList.add('');
-                // ingredientEl.classList.add('');
-                // drinkCard.classList.a
+                // drinkNameEl.className = '';
+                // drinkImgEl.className = '';
+                // drinkInstructionEl.className = '';
+                // ingredientEl.className = '';
+                // drinkCard.className = '';
 
                 // appending elements to html container
                 // cocktailCard.innerHTML("");

@@ -50,14 +50,14 @@ function loadPostDates() {
                     
 
                     // setting class for movie elements
-                    // savedMovieNameEl.classList.add('');
-                    // savedMovieImgEl.classList.add('');
-                    // savedMovieDescContainer.classList.add('');
-                    // savedMovieDescTitle.classList.add('');
-                    // savedMovieDescEl.classList.add('');
-                    // savedMovieCastContainer.classList.add('');
-                    // savedMovieCastTitle.classList.add('');
-                    // savedMovieCastMemebers.classList.add('');
+                    // savedMovieNameEl.className = '';
+                    // savedMovieImgEl.className = '';
+                    // savedMovieDescContainer.className = '';
+                    // savedMovieDescTitle.className = '';
+                    // savedMovieDescEl.className = '';
+                    // savedMovieCastContainer.className = '';
+                    // savedMovieCastTitle.className = '';
+                    // savedMovieCastMemebers.className = '';
                     
 
                     // appending elements to html container
@@ -117,11 +117,11 @@ function loadPostDates() {
                     drinkId = data.drinks[0].idDrink;
     
                     // setting class for cocktail elements
-                    // savedDrinkNameEl.classList.add('');
-                    // savedDrinkImgEl.classList.add('');
-                    // savedDrinkInstructionEl.classList.add('');
-                    // savedIngredientsEl.classList.add('');
-                    // savedDrinkCard.classList.a
+                    // savedDrinkNameEl.className = '';
+                    // savedDrinkImgEl.className = '';
+                    // savedDrinkInstructionEl.className = '';
+                    // savedIngredientsEl.className = '';
+                    // savedDrinkCard.className = '';
     
                     // appending elements to html container
                     // cocktailCard.innerHTML("");
