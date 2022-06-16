@@ -9,7 +9,7 @@ function loadPostDates() {
 
     function savedMovieApi() {
     
-        const options = {
+        const options1 = {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': 'fe7bdd69f0msh9594c83e6b599c0p1521a2jsn075065d4fdd0',
@@ -20,7 +20,7 @@ function loadPostDates() {
         
         let savedMovieUrl = `https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=${savedMovieId}&output_language=en`;
         
-        fetch(savedMovieUrl, options)
+        fetch(savedMovieUrl, options1)
             .then(function (response) {
                 return response.json();
             })
@@ -70,10 +70,10 @@ function loadPostDates() {
                     savedMovieCastContainer.append(savedMovieCastTitle);
                     savedMovieDescContainer.append(savedMovieDescEl);
                     savedMovieCastContainer.append(savedMovieCastMemebers);
-
+                    console.log(savedMovieCard);
                     for (let i = 0; i < data.cast.length; i++) {
                         let savedMovieCast = document.createElement('li');
-                        savedMovieCast.textContent = data.results.cast[i];
+                        savedMovieCast.textContent = data.cast[i];
                         savedMovieCastMemebers.append(savedMovieCast);
                     }
                     
@@ -88,6 +88,7 @@ function loadPostDates() {
     // const savedDateCard = document.createElement('div');
     // savedDateCard.innerHTML = localStorage.getItem("listdata");
     // savedDatesContainer.append(savedDateCard);
+    
     
 };
 
