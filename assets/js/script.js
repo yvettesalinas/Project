@@ -1,10 +1,4 @@
-var containersavedDatesEl = document.getElementById("saved-dates-container")
-var ViewsavedDatesEl = document.getElementById("view-saved-dates")
-var listsavedDatesEl = document.getElementById("saved-dates-list")
-var savedDatesE1 = document.querySelector("#savedDates");
-
-var yourDates = [];
-
+// sets movie Id in global scope to reference for local storage
 let movieId = document.createElement('p');
 // Fetches movie API, dont have as many daily fetches for this one so we won't call it until we need to
 function movieApi() {
@@ -17,7 +11,7 @@ function movieApi() {
         }
     };
     
-    // adds preferred streaming service to 
+    // adds preferred streaming service and genre to fetch request 
     let service = $('#service-select').val();
     let genre = $('#genre-select').val();
     let movieUrl = `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${service}&type=movie&genre=${genre}&page=1&output_language=en&language=en`;
@@ -40,14 +34,15 @@ function movieApi() {
                 let movieCastTitle = document.createElement('h3');
                 let movieCastMembers = document.createElement('ul');
                 const movieCard = $('#movie-container');
-
+                
+                // Randomly selects movie from fetched array
                 for (let i = 0; i < 1; i++) {
                     const arrayMovie = Math.floor(Math.random() * data.results.length);
                     
                     console.log(arrayMovie);
                 
             
-                    // // setting text for cocktail elements
+                    // setting text for movie elements
                     movieId = data.results[arrayMovie].imdbID;
                     movieNameEl.textContent = data.results[arrayMovie].title;
                     movieImgEl.src = data.results[arrayMovie].posterURLs['original'];
@@ -67,7 +62,7 @@ function movieApi() {
                     movieCastMembers.className = 'content';
                     
 
-                    // appending elements to html container
+                    // appending elements to html movie container
                     movieCard.append(movieNameEl);
                     movieCard.append(movieImgEl);
                     movieCard.append(movieDescContainer);
@@ -76,7 +71,8 @@ function movieApi() {
                     movieCastContainer.append(movieCastTitle);
                     movieDescContainer.append(movieDescEl);
                     movieCastContainer.append(movieCastMembers);
-
+                    
+                    // loops through cast length and gives each cast member a li element
                     for (let i = 0; i < data.results[arrayMovie].cast.length; i++) {
                         let movieCast = document.createElement('li');
                         movieCast.textContent = data.results[arrayMovie].cast[i];
@@ -89,8 +85,9 @@ function movieApi() {
 
 };
 
-// Fetches cocktail api
+// Sets drink id in global scope to reference for local storage
 let drinkId = document.createElement('p');
+// Fetches cocktail api
 function cocktailApi() {
     
     const optionsB = {
@@ -137,7 +134,7 @@ function cocktailApi() {
                 
                 
 
-                // appending elements to html container
+                // appending elements to html cocktail container
                 drinkCard.append(drinkNameEl);
                 drinkCard.append(drinkImgEl);
                 drinkCard.append(drinkIngredientsTitle);
@@ -176,15 +173,18 @@ burgerIcon.addEventListener('click',() => {
     navbarMenu.classList.toggle('is-active');
 });
 
+// click listener to call movie and cocktail api functions
 $('#getDate').click(function() {
     movieApi();
     cocktailApi();
 });
 
-
+// sets local storage with movie and cocktail id's
 $('#savedDate').click(function() {
+    // removes any previous saved date 
     localStorage.removeItem("listdata")
 
+    // sets local storage with new saved date info
     let list = [];
     console.log(drinkId);
     list.push(movieId, drinkId);

@@ -11,84 +11,85 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-<body>
+<header>
 
-        <!--NAVBAR-->
-        <nav class="navbar has-shadow is-white">
-          <!--logo-->
-          <div class="navbar-brand">
-            <a class="navbar-item" href="https://yvettesalinas.github.io/date-destresser/">
-              <img src="./assets/images/logo_no_background.png" alt="Date Destresser: Your Perfect Night is a Click Away" style="max-height: 70px">
-            </a>
-            <div id="burger" class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        
-          <div id="navbarExampleTransparentExample" class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item" href="https://yvettesalinas.github.io/date-destresser/#">
-                Home
-              </a>
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="#">
-                  More
-                </a>
-                <div class="navbar-dropdown is-boxed">
-                  <a class="navbar-item" href="./saved-dates.html">
-                    Saved Dates
-                  </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-    
-      <!--breadcrumbs-->
-      <div class="section pt-4 pb-0">
-        <nav class="breadcrumb has-arrow-separator">
-            <ul class="container">
-                <li><a href="./index.html" class="has-text-grey">Date Destresser</a></li>
-                <li class="is-active"><a>Your Dates</a></li>
-            </ul>
-        </nav>
+  <!--NAVBAR-->
+  <nav class="navbar has-shadow is-white">
+    <!--logo-->
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://yvettesalinas.github.io/date-destresser/">
+        <img src="./assets/images/logo_no_background.png" alt="Date Destresser: Your Perfect Night is a Click Away" style="max-height: 70px">
+      </a>
+      <div id="burger" class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-</head>
-
-<body>
-    <header class="dates">
-       <h1 class="date-title">Your Saved Dates <span id="date-#"></span></h1> 
-
-       <div>
-           <a href="./index.html" class="btn-back">
-               Return Home
-           </a>
-       </div>
-
-    </header>
-
-    <main>
-      <div class="container">
-        <div class="columns pt-6">
-          <div class="saved-dates" class="container columns pt-6">
-            <div class="column is-half m-6 box">
-              <div id="saved-movie-container" class="list-group"></div>
-            </div>
-            <div class="column is-half m-6 box">
-              <div id="saved-cocktail-container" class="list-group"></div>
-            </div>
-
+    </div>
+  
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://yvettesalinas.github.io/date-destresser/#">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">
+            More
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="./saved-dates.html">
+              Saved Dates
+            </a>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </nav>
+    
+    <!--breadcrumbs-->
+    <div class="section pt-4 pb-0">
+      <nav class="breadcrumb has-arrow-separator">
+          <ul class="container">
+              <li><a href="./index.html" class="has-text-grey">Date Destresser</a></li>
+              <li class="is-active"><a>Your Dates</a></li>
+          </ul>
+      </nav>
+    </div>
+  </nav>
+</header>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./assets/js/saved-dates.js"></script>
+<body>
+  <header class="dates">
+      <h1 class="date-title">Your Saved Dates <span id="date-#"></span></h1> 
 
-    <!--FOOTER-->
+      <div>
+          <a href="./index.html" class="btn-back">
+              Return Home
+          </a>
+      </div>
+
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="columns pt-6">
+        <div class="saved-dates" class="container columns pt-6">
+          <div class="column is-half m-6 box">
+            <div id="saved-movie-container" class="list-group"></div>
+          </div>
+          <div class="column is-half m-6 box">
+            <div id="saved-cocktail-container" class="list-group"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./assets/js/saved-dates.js"></script>
+
+  <!--FOOTER-->
 <footer class="footer has-text-centered has-shadow">
     <span class="icon is-large">
         <img src = "assets/images/logo_no_background.png" />

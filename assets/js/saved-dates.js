@@ -1,8 +1,10 @@
 function loadPostDates() {
     console.log(localStorage.listdata);
+    // stored as a string with 2 values so split by comma to separate movie and cocktail id
     const saveDateData = localStorage.getItem("listdata").split(',');
     console.log(saveDateData);
 
+    // assign movie and cocktail id to reference in fetch request
     let savedMovieId = saveDateData[0];
     let savedCocktailId = saveDateData[1];
     console.log(savedMovieId);
@@ -17,7 +19,7 @@ function loadPostDates() {
             }
         };
         
-        
+        // inserts movie id into fetch url
         let savedMovieUrl = `https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=${savedMovieId}&output_language=en`;
         
         fetch(savedMovieUrl, options1)
@@ -84,6 +86,7 @@ function loadPostDates() {
     savedMovieApi();
     
     function savedCocktailApi() {
+        // inserts cocktail id value into fetch request url
         let savedCocktailUrl = `https://the-cocktail-db.p.rapidapi.com/lookup.php?i=${savedCocktailId}`
     
         const options2 = {
@@ -130,7 +133,7 @@ function loadPostDates() {
                     savedDrinkIngredientsTitle.className = 'card-header';
                     
     
-                    // appending elements to html container
+                    // appending elements to html saved cocktail container
                     savedDrinkCard.append(savedDrinkNameEl);
                     savedDrinkCard.append(savedDrinkImgEl);
                     savedDrinkCard.append(savedDrinkIngredientsTitle);
@@ -140,7 +143,7 @@ function loadPostDates() {
     
                     // for loop to list out ingredients and measurements
                     for(let i = 1; i < 16; i++) {
-                        
+                        // if an ingredient at i has a value the function will create a li element and append the ingredients
                         if(data.drinks[0][`strIngredient${i}`]) {
                             let savedIngredientsEl = document.createElement('li');
                                 

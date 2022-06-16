@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Destresser</title>
-    <link rel="icon" href="./assets/images/favicon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Destresser</title>
+  <link rel="icon" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -58,129 +58,132 @@
     <!--TITLE-->
     <header>
         <div class="hero is-halfheight has-background is-white">
-            <img alt="Date Destresser: Your Perfect Night is a Click Away" class="hero-background is-transparent" src="assets/images/hero6.jpg" />
-            <div class="hero-body">
-              <div class="container">
-                <h1 class="title">
-                  Your Perfect Night is a Click Away
-                </h1>
+          <img alt="Date Destresser: Your Perfect Night is a Click Away" class="hero-background is-transparent" src="assets/images/hero6.jpg" />
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">
+                Your Perfect Night is a Click Away
+              </h1>
 
-                <!--DATE SELECTION-->
-                <section class="hero my-4">
-                    <div class="hero-btn has-text-centered">
-                        <label for="service-select">Choose your preferred Streaming Service:</label>
-                        <select id="service-select" name="streamingServices">
-                            <option value="">--Please choose an option--</option>
-                            <option value="netflix">Netflix</option>
-                            <option value="prime">Amazon Prime</option>
-                            <option value="disney">Disney</option>
-                            <option value="hbo">HBO</option>
-                            <option value="hulu">Hulu</option>
-                            <option value="peacock">Peacock</option>
-                            <option value="paramount">Paramount</option>
-                            <option value="starz">Starz</option>
-                            <option value="showtime">Showtime</option>
-                            <option value="apple">Apple Tv</option>
-                            <option value="mubi">Mubi</option>
-                        </select>
-                        <br>
-                        <label for="genre-select">Choose your preferred genre:</label>
-                        <select id="genre-select" name="genres">
-                            <option value="">--Please choose an option--</option>
-                            <option value="1">Biography</option>
-                            <option value="10402">Music</option>
-                            <option value="10749">Romance</option>
-                            <option value="10751">Family</option>
-                            <option value="10752">War</option>
-                            <option value="10763">News</option>
-                            <option value="10764">Reality Show</option>
-                            <option value="12">Adventure</option>
-                            <option value="14">Fantasy</option>
-                            <option value="16">Animation</option>
-                            <option value="18">Drama</option>
-                            <option value="2">Film Noir</option>
-                            <option value="27">Horror</option>
-                            <option value="28">Action</option>
-                            <option value="3">GameShow</option>
-                            <option value="35">Comedy</option>
-                            <option value="36">History</option>
-                            <option value="37">Western</option>
-                            <option value="4">Musical</option>
-                            <option value="5">Sport</option>
-                            <option value="53">Thriller</option>
-                            <option value="6">Short</option>
-                            <option value="7">Adult</option>
-                            <option value="80">Fiction</option>
-                            <option value="9648">Mystery</option>
-                            <option value="99">Documentary</option>
-                        </select></div><br>
-                         <!--GET DATE BUTTON-->
-                        <div class="getdate-btn has-text-centered"></div>
-                        <button type="submit" id="getDate" class="button is-rounded is-medium is-danger">Receive Date</button>
-                    <br>
+              <!--DATE SELECTION-->
+              <section class="hero my-4">
+                <div class="hero-btn has-text-centered">
+                  <label for="service-select">Choose your preferred Streaming Service:</label>
+                  <select id="service-select" name="streamingServices">
+                    <option value="">--Please choose an option--</option>
+                    <option value="netflix">Netflix</option>
+                    <option value="prime">Amazon Prime</option>
+                    <option value="disney">Disney</option>
+                    <option value="hbo">HBO</option>
+                    <option value="hulu">Hulu</option>
+                    <option value="peacock">Peacock</option>
+                    <option value="paramount">Paramount</option>
+                    <option value="starz">Starz</option>
+                    <option value="showtime">Showtime</option>
+                    <option value="apple">Apple Tv</option>
+                    <option value="mubi">Mubi</option>
+                  </select>
+                  <br>
+                  <label for="genre-select">Choose your preferred genre:</label>
+                  <select id="genre-select" name="genres">
+                    <option value="">--Please choose an option--</option>
+                    <option value="1">Biography</option>
+                    <option value="10402">Music</option>
+                    <option value="10749">Romance</option>
+                    <option value="10751">Family</option>
+                    <option value="10752">War</option>
+                    <option value="10763">News</option>
+                    <option value="10764">Reality Show</option>
+                    <option value="12">Adventure</option>
+                    <option value="14">Fantasy</option>
+                    <option value="16">Animation</option>
+                    <option value="18">Drama</option>
+                    <option value="2">Film Noir</option>
+                    <option value="27">Horror</option>
+                    <option value="28">Action</option>
+                    <option value="3">GameShow</option>
+                    <option value="35">Comedy</option>
+                    <option value="36">History</option>
+                    <option value="37">Western</option>
+                    <option value="4">Musical</option>
+                    <option value="5">Sport</option>
+                    <option value="53">Thriller</option>
+                    <option value="6">Short</option>
+                    <option value="7">Adult</option>
+                    <option value="80">Fiction</option>
+                    <option value="9648">Mystery</option>
+                    <option value="99">Documentary</option>
+                  </select>
+                  <br>
+                </div>
+              </section>
+              <!--GET DATE BUTTON-->
+              <div class="getdate-btn has-text-centered"></div>
+              <button type="submit" id="getDate" class="button is-rounded is-medium is-danger">Receive Date</button>
+              <br>
 
-                <h3 class="subtitle">
-                    Take the night off. Let us handle the stress of date night. No more arguments over what to do. The perfect date for a perfect evening.
-                </h3>
-              </div>
+              <h3 class="subtitle">
+                  Take the night off. Let us handle the stress of date night. No more arguments over what to do. The perfect date for a perfect evening.
+              </h3>
             </div>
           </div>
+        </div>
 
     </header>
 </body>
           
-    <!--CARD SECTIONS-->
-    <main>
-            <section id="card">
-                <div class="container">
-                    <div class="columns pt-6">
-                    <!--MOVIE CONTAINER-->
-                        <div class="column m-6 box">
-                            <figure class="image is-inline-block">
-                                <img src="./assets/images/streaming-icon.jpg" class="is-rounded" />
-                            </figure>
-                                <!-- <h2 class="subtitle has-text-centered">MOVIE</h2> -->
-                                <div id="movie-container" class="list-group">                    
-                                </div>  
-                        </div>              
-                    <!--DINNER CONTAINER-->
-                        <!-- <div class="column">
-                            <figure class="image is-inline-block">
-                                <img src="./assets/images/meal-icon.jpg" class="is-rounded" />
-                            </figure>
-                                <h2 class="subtitle has-text-centered">DINNER</h2>
-                                <div id="dinner-container" class="list-group"></div>
-                        </div> -->
-                    <!--COCKTAIL CONTAINER-->           
-                        <div class="column m-6 box">
-                                <figure class="image is-inline-block">
-                                <img src="./assets/images/cocktail-icon.jpg" class="is-rounded" />
-                                </figure>
-                                <!-- <h2 class="subtitle has-text-centered">COCKTAIL</h2> -->
-                                <div id="cocktail-container" class="list-group">
-                                </div>
-                        </div>
-                    </div>   
+  <!--CARD SECTIONS-->
+  <main>
+    <section id="card">
+      <div class="container">
+          <div class="columns pt-6">
+          <!--MOVIE CONTAINER-->
+              <div class="column m-6 box">
+                  <figure class="image is-inline-block">
+                      <img src="./assets/images/streaming-icon.jpg" class="is-rounded" />
+                  </figure>
+                      <!-- <h2 class="subtitle has-text-centered">MOVIE</h2> -->
+                      <div id="movie-container" class="list-group">                    
+                      </div>  
+              </div>              
+              <!--DINNER CONTAINER-->
+              <!-- <div class="column">
+                <figure class="image is-inline-block">
+                  <img src="./assets/images/meal-icon.jpg" class="is-rounded" />
+                </figure>
+                  <h2 class="subtitle has-text-centered">DINNER</h2>
+                  <div id="dinner-container" class="list-group"></div>
+              </div> -->
+              <!--COCKTAIL CONTAINER-->           
+              <div class="column m-6 box">
+                <figure class="image is-inline-block">
+                <img src="./assets/images/cocktail-icon.jpg" class="is-rounded" />
+                </figure>
+                <!-- <h2 class="subtitle has-text-centered">COCKTAIL</h2> -->
+                <div id="cocktail-container" class="list-group">
                 </div>
-            </section>
-    </main>
+              </div>
+          </div>   
+      </div>
+    </section>
+  </main>
 
-            <!--SAVE DATE BUTTON-->
-            <div class="Save-btn has-text-centered">
-              <button type="submit" id="savedDate" class="button is-rounded is-medium is-danger">Save Date</button>
-          </div>
+  <!--SAVE DATE BUTTON-->
+  <div class="Save-btn has-text-centered">
+    <button type="submit" id="savedDate" class="button is-rounded is-medium is-danger">Save Date</button>
+  </div>
 
-    <!--JAVASCRIPT-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+  <!--JAVASCRIPT-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 
-<!--FOOTER-->
-<footer class="footer has-text-centered has-shadow">
-    <span class="icon is-large">
-        <img src = "assets/images/logo_no_background.png" />
-    </span>
-    <h2>Made with ❤️️ by <strong>Group 6!</strong></h2>
-</footer>
+  <!--FOOTER-->
+  <footer class="footer has-text-centered has-shadow">
+      <span class="icon is-large">
+          <img src = "assets/images/logo_no_background.png" />
+      </span>
+      <h2>Made with ❤️️ by <strong>Group 6!</strong></h2>
+  </footer>
 </body>
 
 </html>
