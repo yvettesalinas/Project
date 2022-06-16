@@ -3,8 +3,8 @@ function loadPostDates() {
     const saveDateData = localStorage.getItem("listdata").split(',');
     console.log(saveDateData);
 
-    const savedMovieId = saveDateData[0];
-    const savedCocktailId = saveDateData[1];
+    let savedMovieId = saveDateData[0];
+    let savedCocktailId = saveDateData[1];
     console.log(savedMovieId);
 
     function savedMovieApi() {
@@ -85,6 +85,7 @@ function loadPostDates() {
     savedMovieApi();
     
     function savedCocktailApi() {
+        let savedCocktailUrl = `https://the-cocktail-db.p.rapidapi.com/lookup.php?i=${savedCocktailId}`
     
         const options2 = {
             method: 'GET',
@@ -94,7 +95,7 @@ function loadPostDates() {
             }
         };
         
-        fetch('https://the-cocktail-db.p.rapidapi.com/random.php', options2)
+        fetch(savedCocktailUrl , options2)
             .then(function (response) {
                 return response.json();
             })

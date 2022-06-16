@@ -115,6 +115,8 @@ function cocktailApi() {
                 let drinkImgEl = document.createElement('img')
                 let drinkIngredientsEl = document.createElement('ul');
                 let drinkInstructionEl = document.createElement('p');
+                let drinkIngredientsTitle = document.createElement('h3')
+                let drinkInstructionsTitle = document.createElement('h3');
                 let drinkCard = $('#cocktail-container');
                 
             
@@ -123,19 +125,25 @@ function cocktailApi() {
                 drinkImgEl.src = data.drinks[0].strDrinkThumb;
                 drinkInstructionEl.textContent = data.drinks[0].strInstructions;
                 drinkId = data.drinks[0].idDrink;
+                drinkIngredientsTitle = 'Ingredients:'
+                drinkInstructionsTitle = 'Instructions:'
 
                 // setting class for cocktail elements
-                // drinkNameEl.className = '';
-                // drinkImgEl.className = '';
-                // drinkInstructionEl.className = '';
-                // ingredientEl.className = '';
-                // drinkCard.className = '';
+                drinkNameEl.className = 'card-header-title is-centered';
+                drinkImgEl.className = 'card-image';
+                drinkInstructionEl.className = 'card-content';
+                drinkIngredientsEl.className = 'card-footer';
+                drinkInstructionsTitle.className = 'card-header';
+                drinkIngredientsTitle.className = 'card-header';
+                
+                
 
                 // appending elements to html container
-                // cocktailCard.innerHTML("");
                 drinkCard.append(drinkNameEl);
                 drinkCard.append(drinkImgEl);
+                drinkCard.append(drinkIngredientsTitle);
                 drinkCard.append(drinkIngredientsEl);
+                drinkCard.append(drinkInstructionsTitle);
                 drinkCard.append(drinkInstructionEl);
 
                 // for loop to list out ingredients and measurements
@@ -145,6 +153,7 @@ function cocktailApi() {
                         let ingredientEl = document.createElement('li');
                             
                         ingredientEl.innerHTML = data.drinks[0][`strIngredient${i}`] + ' : ' + data.drinks[0][`strMeasure${i}`];
+                        ingredientEl.className = 'card-footer-item';
 
                         
                         drinkIngredientsEl.append(ingredientEl)
@@ -175,8 +184,7 @@ $('#getDate').click(function() {
 
 
 $('#savedDate').click(function() {
-    // let getDrink = drinkId;
-    // let getMovie = movieId
+    localStorage.removeItem("listdata")
 
     let list = [];
     console.log(drinkId);
