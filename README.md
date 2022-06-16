@@ -38,7 +38,7 @@ The following images demonstrate the application's appearance:
 
 [Home Page with an Example of a Movie and a Cocktail](./assets/images/screenshot-example.jpg)
 
-[Saved Dates Page with a Saved Date Example](./)
+[Saved Dates Page with a Saved Date Example](./assets/images/screenshot-saved-dates.jpg)
 
 ## 🌐 Project Usage
 To view the application, please click on the following link: 
