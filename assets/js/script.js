@@ -64,7 +64,7 @@ function movieApi() {
                     movieDescEl.className = 'card-content';
                     movieCastContainer.className = 'card-footer';
                     movieCastTitle.className = 'card-content';
-                    movieCastMembers.className = 'card-footer-item';
+                    movieCastMembers.className = 'content';
                     
 
                     // appending elements to html container
