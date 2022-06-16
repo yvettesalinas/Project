@@ -68,7 +68,6 @@ function movieApi() {
                     
 
                     // appending elements to html container
-                    // movieCard.innerHTML("");
                     movieCard.append(movieNameEl);
                     movieCard.append(movieImgEl);
                     movieCard.append(movieDescContainer);
@@ -153,7 +152,7 @@ function cocktailApi() {
                         let ingredientEl = document.createElement('li');
                             
                         ingredientEl.innerHTML = data.drinks[0][`strIngredient${i}`] + ' : ' + data.drinks[0][`strMeasure${i}`];
-                        ingredientEl.className = 'card-footer-item';
+                        ingredientEl.className = 'card-content';
 
                         
                         drinkIngredientsEl.append(ingredientEl)

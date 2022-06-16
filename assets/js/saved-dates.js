@@ -50,18 +50,17 @@ function loadPostDates() {
                     
 
                     // setting class for movie elements
-                    // savedMovieNameEl.className = '';
-                    // savedMovieImgEl.className = '';
-                    // savedMovieDescContainer.className = '';
-                    // savedMovieDescTitle.className = '';
-                    // savedMovieDescEl.className = '';
-                    // savedMovieCastContainer.className = '';
-                    // savedMovieCastTitle.className = '';
-                    // savedMovieCastMemebers.className = '';
+                    savedMovieNameEl.className = 'card-header-title is-centered';
+                    savedMovieImgEl.className = 'card-image';
+                    savedMovieDescContainer.className = 'card-content';
+                    savedMovieDescTitle.className = 'card-header';
+                    savedMovieDescEl.className = 'card-content';
+                    savedMovieCastContainer.className = 'card-footer';
+                    savedMovieCastTitle.className = 'card-content';
+                    savedMovieCastMemebers.className = 'content';
                     
 
                     // appending elements to html container
-                    // savedMovieCard.innerHTML("");
                     savedMovieCard.append(savedMovieNameEl);
                     savedMovieCard.append(savedMovieImgEl);
                     savedMovieCard.append(savedMovieDescContainer);
@@ -70,7 +69,7 @@ function loadPostDates() {
                     savedMovieCastContainer.append(savedMovieCastTitle);
                     savedMovieDescContainer.append(savedMovieDescEl);
                     savedMovieCastContainer.append(savedMovieCastMemebers);
-                    console.log(savedMovieCard);
+                    
                     for (let i = 0; i < data.cast.length; i++) {
                         let savedMovieCast = document.createElement('li');
                         savedMovieCast.textContent = data.cast[i];
@@ -108,6 +107,8 @@ function loadPostDates() {
                     let savedDrinkImgEl = document.createElement('img')
                     let savedDrinkIngredientsEl = document.createElement('ul');
                     let savedDrinkInstructionEl = document.createElement('p');
+                    let savedDrinkIngredientsTitle = document.createElement('h3');
+                    let savedDrinkInstructionsTitle = document.createElement('h3');
                     let savedDrinkCard = $('#saved-cocktail-container');
                     
                 
@@ -116,19 +117,25 @@ function loadPostDates() {
                     savedDrinkImgEl.src = data.drinks[0].strDrinkThumb;
                     savedDrinkInstructionEl.textContent = data.drinks[0].strInstructions;
                     drinkId = data.drinks[0].idDrink;
+                    savedDrinkIngredientsTitle = 'Ingredients:'
+                    savedDrinkInstructionsTitle = 'Instructions:'
+                    
     
                     // setting class for cocktail elements
-                    // savedDrinkNameEl.className = '';
-                    // savedDrinkImgEl.className = '';
-                    // savedDrinkInstructionEl.className = '';
-                    // savedIngredientsEl.className = '';
-                    // savedDrinkCard.className = '';
+                    savedDrinkNameEl.className = 'card-header-title is-centered';
+                    savedDrinkImgEl.className = 'card-image';
+                    savedDrinkInstructionEl.className = 'card-content';
+                    savedDrinkIngredientsEl.className = 'card-footer';
+                    savedDrinkInstructionsTitle = 'card-header';
+                    savedDrinkIngredientsTitle.className = 'card-header';
+                    
     
                     // appending elements to html container
-                    // cocktailCard.innerHTML("");
                     savedDrinkCard.append(savedDrinkNameEl);
                     savedDrinkCard.append(savedDrinkImgEl);
+                    savedDrinkCard.append(savedDrinkIngredientsTitle);
                     savedDrinkCard.append(savedDrinkIngredientsEl);
+                    savedDrinkCard.append(savedDrinkInstructionsTitle);
                     savedDrinkCard.append(savedDrinkInstructionEl);
     
                     // for loop to list out ingredients and measurements
@@ -138,6 +145,7 @@ function loadPostDates() {
                             let savedIngredientsEl = document.createElement('li');
                                 
                             savedIngredientsEl.innerHTML = data.drinks[0][`strIngredient${i}`] + ' : ' + data.drinks[0][`strMeasure${i}`];
+                            savedIngredientsEl.className = 'card-content'
     
                             
                             savedDrinkIngredientsEl.append(savedIngredientsEl)
